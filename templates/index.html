@@ -28,6 +28,7 @@
 
     <!-- page specific styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style/detailed-view.css') }}">
+    <script type=text/javascript src=" {{ url_for('static', filename='/js/main.js') }}"></script>
 </head>
 
 <body>
@@ -52,14 +53,8 @@
                 navigation.
             </p>
         </div>
-        <div class="card">
-            <ul>
-                {% for show in shows %}
-                    <li>
-                        <a href="{{ '/tv-show/' + (show['id'] | string) }}">{{ show['title'] }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+        <div class="card" id="shows">
+
         </div>
     </section>
     <footer>
