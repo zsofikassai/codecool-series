@@ -9,14 +9,21 @@ app = Flask('codecool_series')
 
 @app.route('/')
 def index():
-    shows = queries.get_shows()
-    return render_template('index.html', shows=shows)
+    return render_template('index.html')
 
 @app.route('/shows/most-rated')
 def most_rated():
-    headers = ['Title', 'Year', 'Runtime (min)', 'Rating', 'Genres', 'Trailer', 'Homepage']
-    most_rated=queries.get_most_rated()
-    return render_template('most-rated.html', shows=most_rated, headers = headers)
+    return render_template('most-rated.html')
+
+@app.route('/get-most-rated')
+def get_most_rated():
+    most_rated = queries.get_all_most_rated()
+    for show in most_rated:
+        for key in show.keys():
+            if key == 'rating':
+                show[key]= str(show[key])
+    return jsonify(most_rated)
+
 
 @app.route('/get-shows')
 def get_shows():
