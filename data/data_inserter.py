@@ -2,6 +2,10 @@ import datetime
 import os
 import sys
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 import requests
 from psycopg2 import DataError
 
