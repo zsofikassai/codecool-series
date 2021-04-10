@@ -28,22 +28,24 @@ function loadShows () {
 function showShows (shows) {
     // shows boards appending them to #boards div
     // it adds necessary event listeners also
-
+    let showsContainer = document.querySelector('#shows');
     let showList = '';
 
+
     for (let show of shows) {
+
         showList += `
                 <li class="board-name">${show.title}</li>
             `;
     }
-    console.log(showList);
+
     const outerHtml = `
             <ul class="board-container">
                 ${showList}
             </ul>
         `;
 
-    let showsContainer = document.querySelector('#shows');
+
     showsContainer.insertAdjacentHTML("beforeend", outerHtml);
 
 }
