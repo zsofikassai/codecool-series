@@ -20,7 +20,7 @@ def get_most_rated():
     most_rated = queries.get_all_most_rated()
     for show in most_rated:
         for key in show.keys():
-            if key == 'rating':
+            if key == 'rating' or key == 'id':
                 show[key]= str(show[key])
     return jsonify(most_rated)
 

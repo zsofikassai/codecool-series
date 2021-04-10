@@ -50,7 +50,12 @@ function showMostRated (most_rated) {
             let row = '';
             keys = ['title', 'year', 'runtime', 'rating', 'genres', 'trailer', 'homepage'];
             for (let key of keys){
-                if (show[key] != null){
+                if (key == 'title'){
+                    row += `
+                <td> <a href="/show/${show.id}"> ${show[key]} </a></td>
+            `;
+                }
+                else if (show[key] != null){
                     row += `
                 <td> ${show[key]}</td>
             `;
