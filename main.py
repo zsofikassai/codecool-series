@@ -25,6 +25,18 @@ def get_most_rated():
     return jsonify(most_rated)
 
 
+# @app.route('/get-most-rated')
+# def get_most_rated(order_by = 'rating'):
+#     sort = request.args.get('sort')
+#     if sort:
+#         order_by = sort
+#     most_rated = queries.get_all_most_rated(order_by)
+#     for show in most_rated:
+#         for key in show.keys():
+#             if key == 'rating' or key == 'id':
+#                 show[key]= str(show[key])
+#     return jsonify(most_rated)
+
 @app.route('/get-shows')
 def get_shows():
     shows = queries.get_shows()
