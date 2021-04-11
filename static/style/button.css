@@ -4,12 +4,17 @@ input[type="button"] {
     font-family: "Montserrat", sans-serif;
 
     padding: 4px 12px;
-
     color: #278bc4;
     border: #278bc4 solid 2px;
     border-radius: 2px;
     background: rgba(0, 0, 0, 0);
 }
+
+button .header{
+    border: white solid 2px;
+    color: rgba(0, 0, 0, 0);
+}
+
 
 button:hover,
 button:active,
@@ -30,6 +35,17 @@ input[type="button"]:active {
 
     color: rgba(0, 0, 0, .87);
     border: 0;
+}
+
+span button{
+    color: #fff;
+    background: #278bc4;
+    text-shadow: 0 0 4px rgba(255, 255, 255, .2), 0 0 6px rgba(255, 255, 255, .1);
+    display: center;
+}
+
+#clickable{
+    cursor: pointer;
 }
 
 header button,
