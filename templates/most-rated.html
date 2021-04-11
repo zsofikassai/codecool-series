@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
 
     <!-- project wide styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/tablesort.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/site.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/pagination.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
@@ -45,7 +46,7 @@
         <h1 class="title text-center">Shows</h1>
 
         <div class="card">
-        <table class ="table">
+        <table class ="table table-sortable">
 
         </table>
         </div>
