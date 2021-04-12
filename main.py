@@ -24,18 +24,19 @@ def get_most_rated():
                 show[key]= str(show[key])
     return jsonify(most_rated)
 
-
-# @app.route('/get-most-rated')
-# def get_most_rated(order_by = 'rating'):
-#     sort = request.args.get('sort')
-#     if sort:
-#         order_by = sort
-#     most_rated = queries.get_all_most_rated(order_by)
-#     for show in most_rated:
-#         for key in show.keys():
-#             if key == 'rating' or key == 'id':
-#                 show[key]= str(show[key])
-#     return jsonify(most_rated)
+@app.route('/show/<show_id>')
+def show_page(show_id):
+    headers = ['Season number', 'Title', 'Overview']
+    show = queries.get_show(show_id)
+    actors = queries.get_actors(show_id)
+    for key in show.keys():
+        if key == 'runtime':
+            if show[key]//60 != 0:
+                show[key] = str(show[key]//60) + "h" + str(show[key]%60) + "m"
+            else:
+                show[key] = str(show[key] % 60) + "m"
+    seasons = queries.get_seasons(show_id)
+    return render_template('show.html', show=show, headers=headers, seasons=seasons, actors=actors[0:3])
 
 @app.route('/get-shows')
 def get_shows():
