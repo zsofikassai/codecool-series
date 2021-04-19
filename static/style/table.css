@@ -8,6 +8,10 @@ table {
     border-radius: 3px;
 }
 
+.yellow{
+    background: yellow;
+}
+
 table th {
     color: #fff;
     background: #278bc4;
@@ -31,9 +35,6 @@ table td {
     padding: 6px;
 }
 
-table tr:nth-child(even) {
-    background: #edf3f7;
-}
 
 table th.action-column {
     background: rgb(203, 75, 70);
