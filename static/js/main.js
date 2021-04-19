@@ -21,6 +21,8 @@ function getShows (callback) {
 function loadShows () {
     // retrieves boards and makes showBoards called
     getShows(function (shows) {
+
+
         showShows(shows);
     });
 }
