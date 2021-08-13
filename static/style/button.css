@@ -10,10 +10,11 @@ input[type="button"] {
     background: rgba(0, 0, 0, 0);
 }
 
+
 button .header{
     border: white solid 2px;
     color: rgba(0, 0, 0, 0);
-}
+
 
 
 button:hover,

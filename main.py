@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, url_for, request, jsonify
 from data import queries
 import math
@@ -9,7 +10,8 @@ app = Flask('codecool_series')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+      return render_template('index.html')
+
 
 # Show the TV-shows ordered by rating, with paginated display
 @app.route('/shows/most-rated')

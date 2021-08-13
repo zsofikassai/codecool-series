@@ -1,4 +1,3 @@
-
 function _api_get (url, callback) {
         fetch(url, {
             method: 'GET',
@@ -43,3 +42,4 @@ function showShows (shows) {
 }
 
 loadShows();
+
