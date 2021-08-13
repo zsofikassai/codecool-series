@@ -26,6 +26,7 @@ table th a:hover {
 }
 
 table td {
+    text-align: center;
     font-size: 13px;
 }
 

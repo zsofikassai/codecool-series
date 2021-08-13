@@ -37,22 +37,51 @@
         <img id="header-logo" src="{{ url_for('static', filename='assets/codecool-logo.png') }}" alt="Codecool Logo">
         <span id="header-title" class="title">Codecool Series DB</span>
         <div id="header-auth">
-            <button type="button"> Rendezés értékelés szerint </button>
             <button type="button" id="bt-register">Register</button>
             <button type="button" id="bt-login">Login</button>
         </div>
-        <div> <button type="button"> Ez itt a button</button> </div>
     </header>
     <section>
-        <h1 class="title text-center">Welcome page</h1>
-        <div class="card">
-            <h2>Welcome TV show lovers!</h2>
-            <p>This great site is happy to bring you your favourite TV show's <i>details</i>.</p>
-        </div>
-        <div class="card" id="shows">
+        <h1 class="title text-center">{{ show.title }}</h1>
+        <div class="card detailed-view">
+            <div class="row">
+                <div class="col col-twothird">
+                    <h2> {{ show.title }}</h2>
+                    <p class="small grayed"> {{ show.runtime}} <span class="separator">|</span> {{ show.genres }} <span
+                            class="separator">|</span> {{ show.year }}</p>
+                    <p>{{ show.overview }}</p>
+                </div>
+            </div>
+            <div>
+                <p><b>Stars:</b>&nbsp;
+                    <a href="#">  {{ actors[0].name }}, </a>
+                    <a href="#">  {{ actors[1].name }}, </a>
+                    <a href="#">  {{ actors[2].name }}</a>
 
+            </div>
+                    <div class="card" id="seasons">
+            <table>
+                <thead>
+                <tr>
+                    {% for header in headers %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for season in seasons %}
+                <tr>
+                    {% for key in season.keys() %}
+                    <td>{{ season[key] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
         </div>
     </section>
+</div>
     <footer>
         Copyright, bla-bla
     </footer>

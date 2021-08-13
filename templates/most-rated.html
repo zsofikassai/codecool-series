@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>CsED</title>
+    <title>Shows</title>
 
     <!-- Import Montserrat font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"/>
 
     <!-- project wide styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/tablesort.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/site.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/pagination.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/background.css') }}">
@@ -25,10 +27,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/form.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/grid.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/utils.css') }}">
-
+    <script type=text/javascript src=" {{ url_for('static', filename='/js/most-rated.js') }}" defer ></script>
     <!-- page specific styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style/detailed-view.css') }}">
-    <script type=text/javascript src=" {{ url_for('static', filename='/js/main.js') }}" defer></script>
 </head>
 
 <body>
@@ -37,21 +38,23 @@
         <img id="header-logo" src="{{ url_for('static', filename='assets/codecool-logo.png') }}" alt="Codecool Logo">
         <span id="header-title" class="title">Codecool Series DB</span>
         <div id="header-auth">
-            <button type="button"> Rendezés értékelés szerint </button>
             <button type="button" id="bt-register">Register</button>
             <button type="button" id="bt-login">Login</button>
         </div>
-        <div> <button type="button"> Ez itt a button</button> </div>
     </header>
     <section>
-        <h1 class="title text-center">Welcome page</h1>
-        <div class="card">
-            <h2>Welcome TV show lovers!</h2>
-            <p>This great site is happy to bring you your favourite TV show's <i>details</i>.</p>
-        </div>
-        <div class="card" id="shows">
+        <h1 class="title text-center">Shows</h1>
 
+        <div class="card">
+        <table class ="table table-sortable">
+
+        </table>
         </div>
+    <div class="card" id="pagination">
+    <div class="pagination">
+
+    </div>
+    </div>
     </section>
     <footer>
         Copyright, bla-bla
