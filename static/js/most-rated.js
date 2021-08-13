@@ -9,9 +9,6 @@
 }
 
 function getMostRated (callback) {
-        // the boards are retrieved and then the callback function is called with the boards
-        // Here we use an arrow function to keep the value of 'this' on dataHandler.
-        //    if we would use function(){...} here, the value of 'this' would change.
         this._api_get('/get-most-rated', (response) => {
             this._data = response;
             callback(response);
@@ -44,10 +41,6 @@ function showMostRated (most_rated) {
             let key = keys[headers.indexOf(header)];
             rows += `<th id='clickable'>${header}</th>`;
         }
-         /*   <form action="/get-most-rated" method="get">
-                                <input type="hidden" value="${key}" name ="sort">
-                                <button type="submit" class="sort"></button>
-                                </form> */
         wrapper.innerHTML = "";
         current_page--;
 
@@ -175,12 +168,5 @@ function showMostRated (most_rated) {
     displayPagination(most_rated, showsContainer, displayed_rows, current_page);
     setupPagination(most_rated, paginationElement, displayed_rows);
 }
-/*   let sortBtns = document.querySelectorAll('.sort');
-        for (let i=0; i<sortBtns.length; i++){
-            sortBtns[i].addEventListener('click', function(){
-                console.log('mukodik');
-            })}*/
-
-
 
  loadMostRated();

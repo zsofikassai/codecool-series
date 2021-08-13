@@ -11,6 +11,7 @@ app = Flask('codecool_series')
 def index():
     return render_template('index.html')
 
+# Show the TV-shows ordered by rating, with paginated display
 @app.route('/shows/most-rated')
 def most_rated():
     return render_template('most-rated.html')
@@ -24,6 +25,8 @@ def get_most_rated():
                 show[key]= str(show[key])
     return jsonify(most_rated)
 
+
+# Shows detailed view of given show based on its id
 @app.route('/show/<show_id>')
 def show_page(show_id):
     headers = ['Season number', 'Title', 'Overview']
@@ -38,6 +41,7 @@ def show_page(show_id):
     seasons = queries.get_seasons(show_id)
     return render_template('show.html', show=show, headers=headers, seasons=seasons, actors=actors[0:3])
 
+#Route for loading all shows dynamically
 @app.route('/get-shows')
 def get_shows():
     shows = queries.get_shows()
